@@ -57,6 +57,12 @@ conda activate lora_env
 安装 LLaMA-Factory 及其依赖（包含 Qwen 支持与量化库）。
 
 ```bash
+# 进入项目根目录
+cd LoRA
+
+# 安装核心第三方依赖
+pip install -r requirements.txt
+# 进入 LLaMA-Factory 安装其本身
 cd LLaMA-Factory
 pip install -e .[metrics,bitsandbytes,qwen]
 pip install modelscope
