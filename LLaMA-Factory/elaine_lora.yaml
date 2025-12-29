@@ -1,0 +1,31 @@
+### 模型路径 (已修正为深层路径)
+model_name_or_path: D:\Code\LoRA\models\Qwen2.5-1.5B-Instruct\qwen\Qwen2___5-1___5B-Instruct
+
+### 训练阶段
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+
+### 数据集配置
+dataset: elaine_identity
+template: qwen
+cutoff_len: 1024
+max_samples: 1000
+overwrite_cache: true
+
+### 输出路径
+output_dir: saves/elaine_lora_sft
+logging_steps: 5
+save_steps: 100
+plot_loss: true
+overwrite_output_dir: true
+
+### 8G 显存专用参数
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 10.0
+fp16: true
+quantization_bit: 4
+upcast_layernorm: true  # 建议添加：提高量化精度并防止溢出

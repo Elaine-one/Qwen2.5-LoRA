@@ -1,0 +1,15 @@
+{
+    "default": {
+        "features": {
+            "conversations": {
+                "_type": "Value"
+            }
+        },
+        "splits": {
+            "train": {
+                "name": "train",
+                "dataset_name": "elaine_identity_sft"
+            }
+        }
+    }
+}
